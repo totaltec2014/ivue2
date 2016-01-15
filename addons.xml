@@ -9,7 +9,7 @@
     <extension point="xbmc.service" library="service.py" start="login"/>
 	<extension point="xbmc.addon.metadata">
 	<provides>video</provides>
-		<description lang="en">Ivue TV Guide dedicated tv guide for iptv Stalker systems</description>
+		<description lang="en">Ivue TV Guide dedicated tv guide for multiple 3rd party addons</description>
 		<disclaimer lang="en">Ivue Guide is forked and based on FTV Guide, Dixie , Ivue , tommy winthers original code, </disclaimer>
 	</extension>
 </addon>
