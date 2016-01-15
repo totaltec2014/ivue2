@@ -1,0 +1,5 @@
+#This TV guide has been re skinned using the original developers code all credits must go to them ie FXB78,Bluezed tommy winther dixie Ray Wilson Ivue etc, 
+
+--------------------------
+Initial release 0.0.1
+--------------------------
