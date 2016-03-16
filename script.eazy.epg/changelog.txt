@@ -1,0 +1,8 @@
+2.0.2 added clear favourite's and started on how to video
+
+2.0.1 fix it so it ACTUALLY works now
+
+2.0.0 all operating platforms now covered and limit lifted on downloads
+
+1.0.0 Initial Release
+
