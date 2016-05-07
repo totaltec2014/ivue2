@@ -1,5 +1,20 @@
 ﻿<addons>
 
+<addon id="plugin.video.iVuewiz" name="iVue Wizard" version="1.0.4" provider-name="iVue">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+	<import addon="script.module.addon.common" />
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video executable</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">iVue Wizard</summary>
+    <description lang="en">iVue Wizard provides easy access to fixes and maintenance for iVue Tv Guide</description>
+    <platform>all</platform>
+  </extension>
+</addon>
+
 <addon id="script.eazy.epg" name="Eazy-Epg" version="2.0.1" provider-name="Eazy-E">
     <requires>
 		<import addon="xbmc.python" version="2.7.2"/>
