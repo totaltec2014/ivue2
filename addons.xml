@@ -67,7 +67,7 @@
 	</extension>
 </addon>
 
-<addon id="script.ivueguide" name="Ivue TV Guide" version="0.0.6" provider-name="iVue Tv Guide">
+<addon id="script.ivueguide" name="Ivue TV Guide" version="0.0.7" provider-name="iVue Tv Guide">
 	<requires>
 		<import addon="xbmc.python" version="2.1.0"/>
 		<import addon="script.module.simplejson" version="2.0.10"/>
@@ -76,10 +76,11 @@
     <extension point="xbmc.service" library="service.py" start="login"/>
 	<extension point="xbmc.addon.metadata">
 	<provides>video</provides>
-		<description lang="en">Ivue TV Guide dedicated tv guide for iptv Stalker systems</description>
+		<description lang="en">Ivue TV Guide simple free and effective, We hope you like it #teamiVue</description>
 		<disclaimer lang="en">Ivue Guide is forked and based on FTV Guide, Dixie , Ivue , tommy winthers original code, </disclaimer>
 	</extension>
 </addon>
+
 
 <addon id="xbmc.repo.ivueguide" name="iVue2 TV Guide Repo" version="0.0.1" provider-name="iVue">
 	<extension point="xbmc.addon.repository" name="iVue2 TV Guide Add-ons Repository">
