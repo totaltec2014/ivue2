@@ -121,6 +121,26 @@
 </addon>
 
 
+<addon id="plugin.video.ottalpha"
+       name="Over The Top TV"
+       version="1.3"
+       provider-name="OTTTV">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource"
+            library="default.py">
+        <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">Over The Top TV</summary>
+    <language>en</language>
+    <description lang="en">OTTTV - Live TV / PPV / Sports / Kids / Movies / Entertainment at an affordable price for all.</description>
+     <platform>all</platform>
+  </extension>
+</addon>
+
+
 <addon id="xbmc.repo.ivueguide" name="iVue2 TV Guide Repo" version="0.0.1" provider-name="iVue">
 	<extension point="xbmc.addon.repository" name="iVue2 TV Guide Add-ons Repository">
 		<info compressed="false">https://raw.githubusercontent.com/totaltec2014/ivue2/master/addons.xml</info>
