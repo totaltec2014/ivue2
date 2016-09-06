@@ -121,23 +121,19 @@
 </addon>
 
 
-<addon id="plugin.video.ottalpha"
-       name="Over The Top TV"
-       version="1.3"
-       provider-name="OTTTV">
-  <requires>
-    <import addon="xbmc.python" version="2.1.0"/>
-  </requires>
-  <extension point="xbmc.python.pluginsource"
-            library="default.py">
+<addon id="plugin.video.ottalpha" name="Over The Top TV" version="1.3" provider-name="OTTTV">
+	<requires>
+		<import addon="xbmc.python" version="2.1.0"/>
+	</requires>
+	<extension point="xbmc.python.pluginsource" library="default.py">
         <provides>video</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
+	</extension>
+	<extension point="xbmc.addon.metadata">
     <summary lang="en">Over The Top TV</summary>
     <language>en</language>
     <description lang="en">OTTTV - Live TV / PPV / Sports / Kids / Movies / Entertainment at an affordable price for all.</description>
-     <platform>all</platform>
-  </extension>
+    <platform>all</platform>
+	</extension>
 </addon>
 
 
