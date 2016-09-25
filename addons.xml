@@ -106,7 +106,7 @@
 	</extension>
 </addon>
 
-<addon id="script.ivueguide" name="Ivue TV Guide" version="1.0.2" provider-name="iVue Tv Guide">
+<addon id="script.ivueguide" name="Ivue TV Guide" version="1.0.3" provider-name="iVue Tv Guide">
 	<requires>
 		<import addon="xbmc.python" version="2.1.0"/>
 		<import addon="script.module.simplejson" version="2.0.10"/>
@@ -122,7 +122,7 @@
 
 <addon id="plugin.video.ottalpha"
        name="Over The Top TV"
-       version="1.6"
+       version="1.7"
        provider-name="OTTTV">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
