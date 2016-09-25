@@ -1,5 +1,24 @@
 ﻿<addons>
 
+<addon id="plugin.video.IVUEcreator"
+version="0.0.1"
+name="IVUEcreator"
+provider-name="Team IVUE">
+<requires>
+  <import addon="xbmc.python" version="2.20.0"/>
+  <import addon="script.module.xbmcswift2" version="2.4.0"/>
+  <import addon="script.module.requests" version="2.9.1" />
+</requires>
+<extension point="xbmc.python.pluginsource" library="main.py">
+  <provides>video</provides>
+</extension>
+<extension point="xbmc.addon.metadata">
+  <summary lang="en">IVUECreator</summary>
+  <description lang="en">Integrate any plugin installed to IVUE guide easily and quickly with PVR support.</description>
+  <disclaimer lang="en">Modified by TeamJDM from the original code from "primeaval" </disclaimer>
+</extension>
+</addon>
+
 <addon id="script.extendedinfo" name="ExtendedInfo Script Mod" version="4.7.6" provider-name="Original work by phil65, modded by [COLOR FF8ABEE2]Open[/COLOR][COLOR FF757677]ELEQ[/COLOR]">
 	<requires>
 		<import addon="xbmc.python" version="2.1.0"/>
@@ -106,7 +125,7 @@
 	</extension>
 </addon>
 
-<addon id="script.ivueguide" name="Ivue TV Guide" version="1.0.3" provider-name="iVue Tv Guide">
+<addon id="script.ivueguide" name="Ivue TV Guide" version="1.0.4" provider-name="iVue Tv Guide">
 	<requires>
 		<import addon="xbmc.python" version="2.1.0"/>
 		<import addon="script.module.simplejson" version="2.0.10"/>
