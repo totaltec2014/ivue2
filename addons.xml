@@ -107,7 +107,7 @@ provider-name="Team IVUE">
   </extension>
 </addon>
 
-<addon id="plugin.video.stalker" name="IPTV Stalker Papiao" version="10.0.0" provider-name="dara">
+<addon id="plugin.video.stalker" name="IPTV Stalker PLUS" version="10.2.4" provider-name="dara, couch potato">
     <requires>
 		<import addon="xbmc.python" version="2.14.0"/>
 	</requires>
@@ -117,8 +117,8 @@ provider-name="Team IVUE">
 	<extension point="xbmc.service" library="server.py" start="startup" />
 	<extension point="xbmc.addon.metadata">
 		<platform>all</platform>
-		<summary lang="en">IPTV Stalker Papiao</summary>
-		<description lang="en">IPTV Stalker for Papiao servers, based on original code by esxbr </description>
+		<summary lang="en">IPTV Stalker PLUS</summary>
+		<description lang="en">IPTV Stalker + VOD add-on for PAPIAO servers, based on original code by esxbr</description>
 		<license>GNU General Public License, v2</license>
 		<language></language>
 		<forum>http://iptvtalk.org/</forum>
