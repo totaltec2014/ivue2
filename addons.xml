@@ -20,7 +20,7 @@
 </addon>
 
 <addon id="plugin.video.IVUEcreator"
-version="0.0.3"
+version="0.0.5"
 name="IVUEcreator"
 provider-name="Team IVUE">
 <requires>
@@ -77,7 +77,7 @@ provider-name="Team IVUE">
 </addon>
 
 
-<addon id="plugin.video.iVuewiz" name="iVue Wizard" version="1.0.5" provider-name="iVue">
+<addon id="plugin.video.iVuewiz" name="iVue Wizard" version="1.0.6" provider-name="iVue">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
 	<import addon="script.module.addon.common" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addon id="plugin.video.IVUEcreator"
-version="0.0.2"
+version="0.0.5"
 name="IVUEcreator"
 provider-name="Team IVUE">
 <requires>
@@ -17,4 +17,3 @@ provider-name="Team IVUE">
   <disclaimer lang="en">Modified by TeamJDM from the original code from "primeaval" </disclaimer>
 </extension>
 </addon>
-
