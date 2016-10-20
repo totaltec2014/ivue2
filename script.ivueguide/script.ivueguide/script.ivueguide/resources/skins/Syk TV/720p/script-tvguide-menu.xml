@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window type="dialog">
+	<allowoverlay>no</allowoverlay>
+	<defaultcontrol always="false">4000</defaultcontrol>
+	<coordinates>
+		<system>1</system>
+		<posx>700</posx>
+		<posy>268</posy>
+	</coordinates>
+    <animation effect="slide" start="300,0" end="0,0" time="500">WindowOpen</animation>
+    <animation effect="slide" start="0,0" end="300,0" time="500">WindowClose</animation>
+    <controls>
+
+        <control type="image">
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>513</width>
+            <height>451</height>
+            <texture>tvguide-menu-bkgrd.png</texture>
+        </control>
+        <control type="image">
+            <posx>-300</posx>
+            <posy>-268</posy>
+            <width>500</width>
+            <height>720</height>
+            <texture>menu-bg1.png</texture>
+        </control>
+			<control type="image">
+                <description>iVue logo</description>
+                <posx>-195</posx>
+                <posy>-280</posy>
+                <width>300</width>
+                <height>170</height>
+                <aspectratio>keep</aspectratio>
+                <fadetime>500</fadetime>
+                <texture>1.png</texture>
+            </control>
+        <control type="image" id="4100">
+            <posx>-125</posx>
+            <posy>220</posy>
+            <width>150</width>
+            <height>80</height>
+            <aspectratio>keep</aspectratio>
+        </control>
+<control type="label">
+                    <description>Selected Channel</description>
+                    <posx>-127</posx>
+                    <posy>300</posy>
+                    <width>250</width>
+                    <height>50</height>
+                    <textcolor>ffffffff</textcolor>
+                    <font>font13</font>
+					<align>left</align>
+                    <aligny>center</aligny>
+					<label>Selected Channel</label>
+<visible>true</visible>
+                </control>
+        <control type="label" id="4101">
+            <posx>-0</posx>
+            <posy>-0</posy>
+            <width>240</width>
+            <height>30</height>
+            <align>center</align>
+            <aligny>center</aligny>
+            <font>osdTitle</font>
+            <textcolor>ffffffff</textcolor>
+<visible>false </visible>
+        </control>
+
+        <control type="button" id="4000"><!-- watch -->
+            <posx>100</posx>
+            <posy>40</posy>
+            <width>240</width>
+            <height>30</height>
+            <texturefocus>tvguide-program-menu-focus.png</texturefocus>
+			<texturenofocus>tvguide-program-grey2.png</texturenofocus>
+            <onup>4000</onup>
+            <ondown>4002</ondown>
+            <align>center</align>
+            <aligny>center</aligny>
+            <font>font13</font>
+            <textcolor>ffffffff</textcolor>
+<visible>false </visible>
+        </control>
+
+        <control type="label" id="4102"><!-- Show Title -->
+            <posx>-750</posx>
+            <posy>-140</posy>
+            <width>500</width>
+            <height>30</height>
+            <align>center</align>
+            <aligny>center</aligny>
+            <font>tvg_font13</font>
+            <textcolor>ffffffff</textcolor>
+<visible>false </visible>
+        </control>
+		
+        <control type="button" id="4002"><!-- REMINDER -->
+            <posx>-170</posx>
+            <posy>-70</posy>
+            <width>240</width>
+            <height>30</height>
+            <texturefocus>tvguide-program-grey-focus.png</texturefocus>
+			<texturenofocus>tvguide-program-grey.png</texturenofocus>
+            <onup>4004</onup>
+            <ondown>4001</ondown>
+            <align>center</align>
+            <aligny>center</aligny>
+            <font>tvg_font13</font>
+            <textcolor>ffffffff</textcolor>
+        </control>
+		
+        <control type="button" id="80000"><!-- GENESIS -->
+            <posx>130</posx>
+            <posy>130</posy>
+            <width>240</width>
+            <height>30</height>
+            <texturefocus>tvguide-program-menu-focus.png</texturefocus>
+			<texturenofocus>tvguide-program-grey2.png</texturenofocus>
+            <onup>4002</onup>
+            <ondown>80001</ondown>
+            <align>center</align>
+            <aligny>center</aligny>
+            <font>font13</font>
+            <textcolor>ffffffff</textcolor>
+			<label>$ADDON[script.ivueguide 80000]</label>
+<visible>false </visible>
+        </control>
+
+        <control type="button" id="80001"><!-- BBCIplayer -->
+            <posx>130</posx>
+            <posy>160</posy>
+            <width>240</width>
+            <height>30</height>
+            <texturefocus>tvguide-program-menu-focus.png</texturefocus>
+			<texturenofocus>tvguide-program-grey2.png</texturenofocus>
+            <onup>80000</onup>
+            <ondown>80002</ondown>
+            <align>center</align>
+            <aligny>center</aligny>
+            <font>font13</font>
+            <textcolor>ffffffff</textcolor>
+			<label>$ADDON[script.ivueguide 80001]</label>
+<visible>false </visible>
+        </control>
+		
+        <control type="button" id="80002"><!-- ITV player -->
+            <posx>130</posx>
+            <posy>190</posy>
+            <width>240</width>
+            <height>30</height>
+            <texturefocus>tvguide-program-menu-focus.png</texturefocus>
+			<texturenofocus>tvguide-program-grey2.png</texturenofocus>
+            <onup>80001</onup>
+            <ondown>80003</ondown>
+            <align>center</align>
+            <aligny>center</aligny>
+            <font>font13</font>
+            <textcolor>ffffffff</textcolor>
+			<label>$ADDON[script.ivueguide 80002]</label>
+<visible>false </visible>
+        </control>
+		
+        <control type="button" id="80003"><!-- My Recordings -->
+            <posx>130</posx>
+            <posy>220</posy>
+            <width>240</width>
+            <height>30</height>
+            <texturefocus>tvguide-program-menu-focus.png</texturefocus>
+			<texturenofocus>tvguide-program-grey2.png</texturenofocus>
+            <onup>80002</onup>
+            <ondown>80004</ondown>
+            <align>center</align>
+            <aligny>center</aligny>
+            <font>font13</font>
+            <textcolor>ffffffff</textcolor>
+			<label>$ADDON[script.ivueguide 80003]</label>
+<visible>false </visible>
+        </control>
+		
+        <control type="button" id="80004"><!-- Smart DNS -->
+            <posx>130</posx>
+            <posy>250</posy>
+            <width>240</width>
+            <height>30</height>
+            <texturefocus>tvguide-program-menu-focus.png</texturefocus>
+			<texturenofocus>tvguide-program-grey2.png</texturenofocus>
+            <onup>80003</onup>
+            <ondown>4001</ondown>
+            <align>center</align>
+            <aligny>center</aligny>
+            <font>font13</font>
+            <textcolor>ffffffff</textcolor>
+			<label>$ADDON[script.ivueguide 80004]</label>
+<visible>false </visible>
+        </control>
+
+
+        <control type="button" id="4001"><!-- Choose Stream -->
+            <posx>-170</posx>
+            <posy>-20</posy>
+            <width>240</width>
+            <height>30</height>
+            <texturefocus>tvguide-program-grey-focus.png</texturefocus>
+			<texturenofocus>tvguide-program-grey.png</texturenofocus>
+            <onup>4002</onup>
+            <ondown>4003</ondown>
+            <align>center</align>
+            <aligny>center</aligny>
+            <font>tvg_font13</font>
+            <textcolor>ffffffff</textcolor>
+            <label>$ADDON[script.ivueguide 30304]</label>
+        </control>
+#        <control type="label"> <!-- Choose Stream Text -->
+#            <posx>-170</posx>
+#            <posy>-20</posy>
+#            <width>240</width>
+#            <height>200</height>
+#            <font>tvg_font13</font>
+#            <textcolor>ffffffff</textcolor>
+#            <label>$ADDON[script.ivueguide 30305]</label>
+#            <wrapmultiline>true</wrapmultiline>
+#        </control>
+
+        <control type="button" id="4003"><!-- CHANNELS -->
+            <posx>-170</posx>
+            <posy>30</posy>
+            <width>240</width>
+            <height>30</height>
+            <texturefocus>tvguide-program-grey-focus.png</texturefocus>
+			<texturenofocus>tvguide-program-grey.png</texturenofocus>
+            <onup>4001</onup>
+            <ondown>4004</ondown>
+            <align>center</align>
+            <aligny>center</aligny>
+            <font>tvg_font13</font>
+            <textcolor>ffffffff</textcolor>
+            <label>$ADDON[script.ivueguide 30307]</label>
+        </control>
+        <control type="button" id="4004"><!-- QUIT -->
+            <posx>-170</posx>
+            <posy>80</posy>
+            <width>240</width>
+            <height>30</height>
+            <texturefocus>tvguide-program-grey-focus.png</texturefocus>
+			<texturenofocus>tvguide-program-grey.png</texturenofocus>
+            <onup>4003</onup>
+            <ondown>4002</ondown>
+            <align>center</align>
+            <aligny>center</aligny>
+            <font>tvg_font13</font>
+            <textcolor>ffffffff</textcolor>
+            <label>$ADDON[script.ivueguide 30308]</label>
+        </control>
+    </controls>
+</window>
