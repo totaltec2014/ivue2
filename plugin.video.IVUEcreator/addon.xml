@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addon id="plugin.video.IVUEcreator"
-version="0.0.5"
+version="0.0.7"
 name="IVUEcreator"
 provider-name="Team IVUE">
 <requires>
@@ -14,6 +14,8 @@ provider-name="Team IVUE">
 <extension point="xbmc.addon.metadata">
   <summary lang="en">IVUECreator</summary>
   <description lang="en">Integrate any plugin installed to IVUE guide easily and quickly with PVR support.</description>
-  <disclaimer lang="en">Modified by TeamJDM from the original code from "primeaval" </disclaimer>
+  <description lang="en">Now includes a fully functioning back up and restore feature</description>
+  <disclaimer lang="en">Modified by TeamJDM from the original code from "Primeaval" </disclaimer>
 </extension>
 </addon>
+

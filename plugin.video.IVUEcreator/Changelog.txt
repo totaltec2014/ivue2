@@ -1,0 +1,17 @@
+19th October 2016
+
+New features added 
+
+Selectable  and custom Back up and restore
+
+which is set to default backup config files
+
+Selectable backup paths type
+
+Selectable Drop box or Goodle Drive, backup paths, or URL path
+
+Remove favourites.xml function
+
+All features are in the settings
+
+Backup path must be set outside Kodi on an external drive, USB flash stick or SD card
