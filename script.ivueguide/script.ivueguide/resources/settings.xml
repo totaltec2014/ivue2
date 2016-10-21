@@ -30,6 +30,7 @@
 		<setting id="enable.osd" label="30118" type="bool" default="true" enable="eq(2,false)" />
 		<setting label="30119" type="lsep" />
 		<setting id="alternative.playback" label="30120" type="bool" default="false" />
+		<setting id="addon.match" label="Channel Matching" type="enum" default="2" values="Exact|Containing|Everything"/>
 		<setting id="ignore.stream" label="Enable offer to choose stream" type="bool" enable="true" default="false" visible="true"/>
 		<setting label="30121" type="lsep" />
 	</category>
