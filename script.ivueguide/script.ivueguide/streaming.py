@@ -6,6 +6,9 @@
 #      Modified for FTV Guide (09/2014 onwards)
 #      by Thomas Geppert [bluezed] - bluezed.apps@gmail.com
 #
+#      Moddified For Ivue2 (10/2016)
+#      By Jules @ JDM using ini mod from Primeval
+#
 #  This Program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
 #  the Free Software Foundation; either version 2, or (at your option)
@@ -25,6 +28,7 @@ import xbmc
 from xml.etree import ElementTree
 import ConfigParser
 import os
+import re
 import xbmcaddon
 
 
@@ -111,8 +115,6 @@ class StreamsService(object):
         # Append inis  
         files.append(os.path.join(datapath,'addons.ini'))
         files.append(os.path.join(datapath,'addons2.ini'))
-        files.append(os.path.join(datapath,'addons_unstable.ini'))
-        files.append(os.path.join(inipath,'plugin.video.dex.ini'))#Jules: load the generated dex ini 
 
         '''
         if LOCAL:
@@ -157,51 +159,9 @@ class StreamsService(object):
                     else:
                         continue
                     entries.append((node.get('name'), value))
-            except ExpatError:
+            except:
                 pass
         return entries
-
-
-    
-    def loadPlaylist(self):
-        iptv_type = GetSetting('playlist.type')
-        IPTV_URL  = '0'
-        IPTV_FILE = '1'
-        entries   = list()
-        label     = ''
-        value     = ''               
-        if iptv_type == IPTV_FILE:
-            path = os.path.join(GetSetting('playlist.file'))
-        else:    
-            url  = GetSetting('playlist.url')
-            path = os.path.join(datapath, 'playlist.m3u')
-            try:
-                if url == '':
-                    path = os.path.join(datapath, 'playlist.m3u')
-                else:
-                    request  = requests.get(url)
-                    playlist = request.content
-
-                    with open(path, 'wb') as f:
-                        f.write(playlist)
-            except: pass
-        if os.path.exists(path):
-            f = open(path)
-            playlist = f.readlines()
-            f.close()           
-            for line in playlist:
-                if line.startswith('#EXTINF:'):
-                    label = line.split(',')[-1].strip()      
-                elif line.startswith('rtmp') or line.startswith('rtmpe') or line.startswith('rtsp') or line.startswith('http'):
-                    value = line.replace('rtmp://$OPT:rtmp-raw=', '').replace('\n', '')
-                    entries.append((label, value))
-            entries.sort()
-            return entries
-            
-
-
-
-
 
     def getAddons(self):
         return self.addonsParser.sections()
@@ -251,36 +211,13 @@ class StreamsService(object):
         @param channel:
         @type channel: source.Channel
         """
-        matches = list()
-        
-        for id in self.getAddons():
-            try:
-                xbmcaddon.Addon(id)
-            except Exception:
-                continue 
+        favourites = self.loadFavourites()
 
-             
-            for (label, stream) in self.getAddonStreams(id):
-                if id == "plugin.video.meta":
-                    label = channel.title
-                    stream = str(stream.replace("<channel>", channel.title.replace(" ","%20")))
-                    
-                
-                if id == "plugin.video.dex":
-                    label = label.upper()
-                    channel.title = channel.title.upper()
-                    if label.startswith(channel.title):
-                        matches.append((id,label,stream))
-                else:
-                    label = label.upper()
-                    channel.title = channel.title.upper()
-                    if (channel.title in label) or (label in channel.title):
-                        matches.append((id, label, stream))
-                '''
-                if label == channel.title:
-                    matches.append((id, label, stream))
-                '''
-                
+        # First check favourites, if we get exact match we use it
+        for label, stream in favourites:
+            if label == channel.title:
+                return stream
+				
         kodiFaves = self.loadFavourites()
         if kodiFaves:
             id = 'kodi-favourite'           
@@ -289,24 +226,65 @@ class StreamsService(object):
                 channel.title = channel.title.upper()
                 if (channel.title in label) or (label in channel.title):
                     matches.append((id, label, stream))
-                
-        iptvPlaylist = self.loadPlaylist()
-        if iptvPlaylist:
-            id = 'iptv-playlist'       
-            for (label, stream) in iptvPlaylist:
-                label = label.upper()
-                channel.title = channel.title.upper()
-                if (channel.title in label) or (label in channel.title):
-                    matches.append((id, label, stream))       
-                            
+
+        # Second check all addons and return all matches
+        matches = []
+        exact_matches = []
+        sub_matches = []
+        numword_matches = []
+        for id in self.getAddons():
+            try:
+                xbmcaddon.Addon(id)
+            except Exception:
+                continue # ignore addons that are not installed
+
+            for (label, stream) in self.getAddonStreams(id):
+                if type(stream) is list:
+                    stream = stream[0]
+                if id == "plugin.video.meta":
+                    label = channel.title
+                    stream = str(stream.replace("<channel>", channel.title.replace(" ","%20")))
+
+                if label.lower() == channel.title.lower(): #TODO unicode
+                    exact_matches.append((id, label, stream))
+                if int(self.addon.getSetting('addon.match')) > 0:
+                    labelx = re.sub(r' ','',label.lower())
+                    title = re.sub(r' ','',channel.title.lower())
+                    titleRe = r".*%s.*" % re.escape(title)
+                    if re.match(titleRe,labelx):
+                        sub_matches.append((id, label, stream))
+                if int(self.addon.getSetting('addon.match')) > 1:
+                    title = re.sub(r' ','',channel.title.lower())
+                    titleRe = r".*%s.*" % re.escape(title)
+                    numbers = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine" , "ten"]
+                    for num in range(1,11):
+                        word = numbers[num-1]
+                        labelnum = re.sub(word,str(num),label.lower())
+                        labelnum = re.sub(r' ','',labelnum)
+                        if re.match(titleRe,labelnum):
+                            numword_matches.append((id, label, stream))
+                    for num in range(1,11):
+                        word = numbers[num-1]
+                        labelnum = re.sub(str(num),word,label.lower())
+                        labelnum = re.sub(r' ','',labelnum)
+                        if re.match(titleRe,labelnum):
+                            numword_matches.append((id, label, stream))
+
+        exact_matches = set(exact_matches)
+        sorted_exact_matches = sorted(exact_matches, key=lambda match: match[1])
+        sub_matches = set(sub_matches) - set(exact_matches)
+        sorted_sub_matches = sorted(sub_matches, key=lambda match: match[1])
+        numword_matches = set(numword_matches) - set(sub_matches) - exact_matches
+        sorted_numword_matches = sorted(numword_matches, key=lambda match: match[1])
+        matches = sorted_exact_matches
+        if int(self.addon.getSetting('addon.match')) > 0:
+            matches = matches + sorted_sub_matches
+        if int(self.addon.getSetting('addon.match')) > 1:
+            matches = matches + sorted_numword_matches
         if len(matches) == 1:
             return matches[0][2]
         else:
             return matches
-
-
-
-
 
 
 class OrderedDict(dict):
@@ -326,6 +304,7 @@ class OrderedDict(dict):
         '''Initialize an ordered dictionary.  Signature is the same as for
         regular dictionaries, but keyword arguments are not recommended
         because their insertion order is arbitrary.
+
         '''
         if len(args) > 1:
             raise TypeError('expected at most 1 arguments, got %d' % len(args))
@@ -339,8 +318,8 @@ class OrderedDict(dict):
 
     def __setitem__(self, key, value, dict_setitem=dict.__setitem__):
         'od.__setitem__(i, y) <==> od[i]=y'
-        
-        
+        # Setting a new item creates a new link which goes at the end of the linked
+        # list, and the inherited dictionary is updated with the new key/value pair.
         if key not in self:
             root = self.__root
             last = root[0]
@@ -349,8 +328,8 @@ class OrderedDict(dict):
 
     def __delitem__(self, key, dict_delitem=dict.__delitem__):
         'od.__delitem__(y) <==> del od[y]'
-        
-        
+        # Deleting an existing item uses self.__map to find the link which is
+        # then removed by updating the links in the predecessor and successor nodes.
         dict_delitem(self, key)
         link_prev, link_next, key = self.__map.pop(key)
         link_prev[1] = link_next
@@ -407,7 +386,7 @@ class OrderedDict(dict):
         value = dict.pop(self, key)
         return key, value
 
-    
+    # -- the following methods do not depend on the internal structure --
 
     def keys(self):
         'od.keys() -> list of keys in od'
@@ -450,7 +429,7 @@ class OrderedDict(dict):
         elif not args:
             raise TypeError('update() takes at least 1 argument (0 given)')
         self = args[0]
-         
+        # Make progressively weaker assumptions about "other"
         other = ()
         if len(args) == 2:
             other = args[1]
@@ -466,7 +445,7 @@ class OrderedDict(dict):
         for key, value in kwds.items():
             self[key] = value
 
-    __update = update  
+    __update = update  # let subclasses override update without breaking __init__
 
     __marker = object()
 
