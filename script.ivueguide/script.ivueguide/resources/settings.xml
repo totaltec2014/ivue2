@@ -31,7 +31,7 @@
 		<setting label="30119" type="lsep" />
 		<setting id="alternative.playback" label="30120" type="bool" default="false" />
 		<setting id="addon.match" label="Channel Matching" type="enum" default="2" values="Exact|Containing|Everything"/>
-		<setting id="ignore.stream" label="Hace iVue always Prompt to choose addon" type="bool" enable="true" default="true" visible="true"/>
+		<setting id="ignore.stream" label="Have iVue always Prompt to choose addon" type="bool" enable="true" default="true" visible="true"/>
 		<setting label="30121" type="lsep" />
 	</category>
 	
