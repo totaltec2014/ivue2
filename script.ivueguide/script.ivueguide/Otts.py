@@ -265,8 +265,22 @@ def Clean_Names_Ott(Clean_Name,tmpFile):
     os.rename(Clean_Name, tmpFile)
     s=open(tmpFile).read()
 
-                     
-    s=s.replace('','')
+    s=s.replace('  - 		','')
+    s=s.replace(' - 		','')	
+    s=s.replace(' # 5  - 		','')
+    s=s.replace(' # ','')
+    s=s.replace('UK:  ','')
+    s=s.replace('UK: ','')
+    s=s.replace('Uk: ','')
+    s=s.replace('E!','E! Entertainment')
+    s=s.replace('BBC1','BBC One')
+    s=s.replace('BBC2','BBC Two')
+    s=s.replace('BBC3','BBC THREE')
+    s=s.replace('BBC4','BBC FOUR')
+	
+
+	
+    s=s.replace('.ts','.ts')
 
 
 

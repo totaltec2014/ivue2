@@ -32,18 +32,65 @@ import re
 import xbmcaddon
 
 
+addon    = 'script.ivueguide'
+ADDONID  = addon
+datapath = xbmc.translatePath(os.path.join('special://profile', 'addon_data', addon))
+inipath  = xbmc.translatePath(os.path.join('special://profile', 'addon_data', addon, 'resources', 'ini'))
+
+def read(filename):
+    f = file(filename, 'r')
+    content = f.read()
+    f.close()
+    return content
+def readlines(filename):
+    lines = read(filename)
+    lines = lines.replace('\r', '')
+    lines = lines.split('\n')
+    return lines
+def GetSetting(param):
+    return xbmcaddon.Addon(ADDONID).getSetting(param)
+def get(param, file):
+    try:    config = readlines(file)
+    except: return None
+    for line in config:
+        if line.startswith(param):
+            return line.split(param, 1)[-1].split('=', 1)[-1].strip()
+    return None
+def walk(folder):
+    import xbmcvfs
+    list = xbmcvfs.listdir(folder)
+    return folder, list[0], list[1] 
+
 class StreamsService(object):
     def __init__(self, addon):
         self.addon = addon
-        path = xbmc.translatePath(os.path.join('special://profile', 'addon_data', 'script.ivueguide', 'addons.ini'))
+        if int(addon.getSetting('addons.ini.type')) == 0:
+            path = xbmc.translatePath(os.path.join('special://profile', 'addon_data', 'script.ivueguide', 'addons.ini'))
+            xbmc.log('[script.ivueguide] addons.ini is used', xbmc.LOGDEBUG)
+        else:
+            customFile = str(addon.getSetting('addons.ini.file'))
+            if os.path.exists(customFile):
+                path = customFile
+            else:
+                path = xbmc.translatePath(os.path.join('special://profile', 'addon_data', 'script.ivueguide', customFile.split('/')[-1]))
+            xbmc.log('[script.ivueguide] Custom addons.ini is used: %s' % path, xbmc.LOGDEBUG)
+
         self.addonsParser = ConfigParser.ConfigParser(dict_type=OrderedDict)
         self.addonsParser.optionxform = lambda option: option
+
+        # Default append addons.ini only
         try:
             self.addonsParser.read(path)
         except:
-            print 'unable to parse addons.ini'
+            print 'Unable to parse addons.ini'
 
-			
+        iniFiles = self.getIniFiles()
+
+        for file in iniFiles:
+            try:    self.addonsParser.read(file)
+            except: pass
+
+
     #custom append ini files
     def getIniFiles(self):
         files = []
@@ -62,38 +109,69 @@ class StreamsService(object):
         # Append inis  
         files.append(os.path.join(datapath,'addons.ini'))
         files.append(os.path.join(datapath,'addons2.ini'))
-
-        '''
-        if LOCAL:
-            files.append(os.path.join(datapath, 'local.ini'))
-
-        if FTVINI == 'UK Links':
-            files.append(os.path.join(datapath, 'uk.ini'))
-        else:
-            files.append(os.path.join(datapath, 'nongeo.ini'))
-        '''
-        return files
 			
+        return files
+
+    def loadPlaylist(self):
+        iptv_type = GetSetting('playlist.type')
+        IPTV_URL  = '0'
+        IPTV_FILE = '1'
+        entries   = list()
+        label     = ''
+        value     = ''               
+        if iptv_type == IPTV_FILE:
+            path = os.path.join(GetSetting('playlist.file'))
+        else:    
+            url  = GetSetting('playlist.url')
+            path = os.path.join(datapath, 'playlist.m3u')
+            try:
+                if url == '':
+                    path = os.path.join(datapath, 'playlist.m3u')
+                else:
+                    request  = requests.get(url)
+                    playlist = request.content
+
+                    with open(path, 'wb') as f:
+                        f.write(playlist)
+            except: pass
+        if os.path.exists(path):
+            f = open(path)
+            playlist = f.readlines()
+            f.close()           
+            for line in playlist:
+                if line.startswith('#EXTINF:'):
+                    label = line.split(',')[-1].strip()      
+                elif line.startswith('rtmp') or line.startswith('rtmpe') or line.startswith('rtsp') or line.startswith('http'):
+                    value = line.replace('rtmp://$OPT:rtmp-raw=', '').replace('\n', '')
+                    entries.append((label, value))
+            entries.sort()
+            return entries		
+
     def loadFavourites(self):
         entries = list()
         path = xbmc.translatePath(os.path.join('special://profile', 'favourites.xml'))
         if os.path.exists(path):
             f = open(path)
             xml = f.read()
-            f.close()
-
+            f.close()             
+ 
             try:
                 doc = ElementTree.fromstring(xml)
                 for node in doc.findall('favourite'):
                     value = node.text
+                    value = node.text.replace(',return','')
                     if value[0:11] == 'PlayMedia("':
                         value = value[11:-2]
                     elif value[0:10] == 'PlayMedia(':
                         value = value[10:-1]
                     elif value[0:22] == 'ActivateWindow(10025,"':
-                        value = value[22:-9]
+                        value = value[22:-2]
                     elif value[0:21] == 'ActivateWindow(10025,':
-                        value = value[22:-8]
+                        value = value[22:-1]
+                    elif value[0:22] == 'ActivateWindow(10001,"':
+                        value = value[22:-2]
+                    elif value[0:21] == 'ActivateWindow(10001,':
+                        value = value[22:-1]
                     else:
                         continue
 
@@ -102,6 +180,9 @@ class StreamsService(object):
                 pass
 
         return entries
+
+		
+		
 
     def getAddons(self):
         return self.addonsParser.sections()
@@ -114,13 +195,14 @@ class StreamsService(object):
         @param channel:
         @type channel: source.Channel
         """
-        favourites = self.loadFavourites()
-
-        # First check favourites, if we get exact match we use it
-        for label, stream in favourites:
-            if label == channel.title:
-                return stream
-
+        kodiFaves = self.loadFavourites()
+        if kodiFaves:
+            id = 'kodi-favourite'           
+            for (label, stream) in kodiFaves:
+                label = label.upper()
+                channel.title = channel.title.upper()
+                if (channel.title in label) or (label in channel.title):
+                    matches.append((id, label, stream))
 
         # Second check all addons and return all matches
         matches = []

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="script.ivueguide" name="Ivue TV Guide" version="1.1.1" provider-name="iVue Tv Guide">
+<addon id="script.ivueguide" name="Ivue TV Guide" version="1.1.2c" provider-name="iVue Tv Guide">
 	<requires>
 		<import addon="xbmc.python" version="2.1.0"/>
 		<import addon="script.module.simplejson" version="2.0.10"/>
@@ -9,6 +9,7 @@
 	<extension point="xbmc.addon.metadata">
 	<provides>video</provides>
 		<description lang="en">Ivue TV Guide simple free and effective, We hope you like it #teamiVue</description>
-		<disclaimer lang="en">Ivue Guide is forked and based on FTV Guide, Dixie , Ivue , tommy winthers original code, </disclaimer>
+		<disclaimer lang="en">Ivue Guide is forked and based on FTV Guide, Dixie , Ivue , tommy winthers original code, Primeval, thanks</disclaimer>
 	</extension>
 </addon>
+
