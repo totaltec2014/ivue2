@@ -196,13 +196,7 @@ class StreamsService(object):
         @type channel: source.Channel
         """
         kodiFaves = self.loadFavourites()
-        if kodiFaves:
-            id = 'kodi-favourite'           
-            for (label, stream) in kodiFaves:
-                label = label.upper()
-                channel.title = channel.title.upper()
-                if (channel.title in label) or (label in channel.title):
-                    matches.append((id, label, stream))
+
 
         # Second check all addons and return all matches
         matches = []

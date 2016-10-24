@@ -265,9 +265,15 @@ def Clean_Names_Ott(Clean_Name,tmpFile):
     os.rename(Clean_Name, tmpFile)
     s=open(tmpFile).read()
 
-    s=s.replace('  - 		','')
-    s=s.replace(' # 5  - 		','')
+    s=s.replace('(HD)NFL: ','NFL ')
+    s=s.replace('(HD)NFLFOX: ','NFL ')
     s=s.replace(' # ','')
+    s=s.replace(' - ','')
+    s=s.replace(' - .','')
+    s=s.replace('(HD)NFLN Redzone: 		','NFL ')
+    s=s.replace('(HD)NFLN: ','NFL')
+    s=s.replace('(HD)NFLNBC:','NFL NBC')	
+	
     s=s.replace('UK:  ','')
     s=s.replace('UK: ','')
     s=s.replace('Uk: ','')
@@ -276,6 +282,17 @@ def Clean_Names_Ott(Clean_Name,tmpFile):
     s=s.replace('BBC2','BBC Two')
     s=s.replace('BBC3','BBC THREE')
     s=s.replace('BBC4','BBC FOUR')
+    s=s.replace('Sky Movies Action HD','Sky Action HD')
+    s=s.replace('Sky Movies Comedy HD','Sky Comedy HD')
+    s=s.replace('Sky Movies Disney HD','Sky Disney HD')
+    s=s.replace('Sky Movies Drama HD','Sky Drama HD')
+    s=s.replace('Sky Movies Family HD','Sky Family HD')
+    s=s.replace('Sky Movies Greats HD','Sky Modern Greats HD')
+    s=s.replace('Sky Movies Premier HD','Sky Premiere HD')
+    s=s.replace('Sky Movies Select HD','Sky Select HD')
+    s=s.replace('Sky Movies Showcase HD','Sky Showcase HD')	
+    s=s.replace('Sky Movies Thriller HD','Sky Thriller HD')	
+	
 	
                      
     s=s.replace('.ts','.m3u8')
