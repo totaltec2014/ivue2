@@ -1,6 +1,6 @@
 ﻿<addons>
 
-<addon id="plugin.video.simplytv"
+<addon id="plugin.video.simplytv" 
        name="Simply TV"
        version="0.0.1"
        provider-name="Simply TV">
