@@ -93,7 +93,7 @@ provider-name="Team IVUE">
   </extension>
 </addon>
 
-<addon id="script.iVueSkins" name="iVue2 Skins" version="1.0.3" provider-name="retrorat1">
+<addon id="script.iVueSkins" name="iVue2 Skins" version="1.0.3" provider-name="retrorat1"> 
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
   </requires>
