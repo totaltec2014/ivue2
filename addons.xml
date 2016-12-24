@@ -123,8 +123,8 @@ provider-name="Team IVUE">
 
 
 <addon id="plugin.video.ottalpha"
-       name="Over The Top TV"
-       version="1.7"
+       name="[COLOR red]Over The Top[COLOR white] TV[/COLOR]"
+       version="2.8"
        provider-name="OTTTV">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
