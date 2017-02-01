@@ -167,23 +167,4 @@ provider-name="Team IVUE">
   </extension>
 </addon>
 
-<addon id="service.XMLTVmerge"
-       name="XMLTVmerge"
-      version="1.0.0"
-      provider-name="TeamJDM">
-    <requires>
-        <import addon="xbmc.addon" version="12.0.0"/>
-        <import addon="xbmc.python" version="2.1.0"/>
-        <import addon="script.module.requests"/>
-    </requires>
-    <extension point="xbmc.service" library="service.py" start="login"/>
-    <extension point="xbmc.addon.metadata">
-        <summary lang="en"></summary>
-         <description lang="en">This addon allows you to download, extract and merge xmltv files to make a single xmltv</description>
-        <platform>all</platform>
-        <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
-    </extension>
-</addon>
-
-
 </addons>
