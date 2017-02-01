@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings>
+  <category label="General">
+  		<setting id="output_folder" type="folder" label="Output folder" default=""/>
+		<setting label="XMLTV" type="lsep" />
+		<setting id="last_merge" type="text" default="1970-01-01 23:59:00.000000" visible="true"/>
+		<setting id="check_interval" label="Interval to merge" type="slider" default="6" range="1,15" option="int" />
+		<setting id="file_name" label="XMLTV final file name" type="text" default="" visible="true"/>
+  </category>
+  <category label="XMLTV">
+		<setting id="xmltv1" label="XMLTV1 URL" type="text" default="" visible="true"/>
+		<setting id="xmltv2" label="XMLTV2 URL" type="text" default="" visible="true"/>
+		<setting id="xmltv3" label="XMLTV3 URL" type="text" default="" visible="true"/>
+		<setting id="xmltv4" label="XMLTV4 URL" type="text" default="" visible="true"/>
+		<setting id="xmltv5" label="XMLTV5 URL" type="text" default="" visible="true"/>
+		<setting id="xmltv6" label="XMLTV6 URL" type="text" default="" visible="true"/>
+		<setting id="xmltv7" label="XMLTV7 URL" type="text" default="" visible="true"/>
+		<setting id="xmltv8" label="XMLTV8 URL" type="text" default="" visible="true"/>
+		<setting id="xmltv9" label="XMLTV9 URL" type="text" default="" visible="true"/>
+		<setting id="xmltv10" label="XMLTV10 URL" type="text" default="" visible="true"/>
+		<setting id="xmltv11" label="XMLTV11 URL" type="text" default="" visible="true"/>
+  </category>
+  <category label="Tools">
+		<setting id="merge_epgs_now" type="action" label="Merge EPGS now" action="XBMC.RunScript($CWD/lib/update_xml.py,xmltvmerger.py)" />
+  </category>
+  
+</settings>
