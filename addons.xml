@@ -20,7 +20,7 @@
 </addon>
 
 <addon id="plugin.video.IVUEcreator"
-version="0.1.2"
+version="0.1.3"
 name="IVUEcreator"
 provider-name="Team IVUE">
 <requires>
