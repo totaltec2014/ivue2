@@ -14,7 +14,7 @@
   <extension point="xbmc.addon.metadata">
     <summary lang="en">Simply Tv need we say more!</summary>
     <language>en</language>
-    <description lang="en">Simple Effective TV</description>
+    <description lang="en">Simple Effective  TV</description>
      <platform>all</platform>
   </extension>
 </addon>
