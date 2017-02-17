@@ -20,7 +20,7 @@
 </addon>
 
 <addon id="plugin.video.IVUEcreator"
-version="0.1.3"
+version="0.1.5"
 name="IVUEcreator"
 provider-name="Team IVUE">
 <requires>
@@ -39,6 +39,7 @@ provider-name="Team IVUE">
   <disclaimer lang="en">Modified by TeamJDM from the original code from "Primeaval" </disclaimer>
 </extension>
 </addon>
+
 
 <addon id="script.extendedinfo" name="ExtendedInfo Script Mod" version="4.7.6" provider-name="Original work by phil65, modded by [COLOR FF8ABEE2]Open[/COLOR][COLOR FF757677]ELEQ[/COLOR]">
 	<requires>
@@ -108,7 +109,7 @@ provider-name="Team IVUE">
   </extension>
 </addon>
 
-<addon id="script.ivueguide" name="Ivue TV Guide" version="2.0.4a" provider-name="iVue Tv Guide">
+<addon id="script.ivueguide" name="Ivue TV Guide" version="3.0.0" provider-name="iVue Tv Guide">
 	<requires>
 		<import addon="xbmc.python" version="2.1.0"/>
 		<import addon="script.module.simplejson" version="2.0.10"/>
