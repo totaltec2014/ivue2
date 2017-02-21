@@ -80,7 +80,7 @@ provider-name="Team IVUE">
 </addon>
 
 
-<addon id="plugin.video.iVuewiz" name="iVue Wizard" version="1.0.9" provider-name="iVue">
+<addon id="plugin.video.iVuewiz" name="iVue Wizard" version="2.0.0" provider-name="iVue">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
 	<import addon="script.module.addon.common" />
@@ -94,6 +94,7 @@ provider-name="Team IVUE">
     <platform>all</platform>
   </extension>
 </addon>
+
 
 <addon id="script.iVueSkins" name="iVue2 Skins" version="1.0.3" provider-name="retrorat1"> 
   <requires>
