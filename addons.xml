@@ -118,7 +118,7 @@ provider-name="Team IVUE">
     <extension point="xbmc.service" library="service.py" start="login"/>
 	<extension point="xbmc.addon.metadata">
 	<provides>video</provides>
-		<description lang="en">Ivue TV Guide simple free and effective, We hope you like it now with category intergration #teamiVue</description>
+		<description lang="en">Ivue TV Guide simple free and effective, We hope you like it now with category intergration #teamiVue#</description>
 		<disclaimer lang="en">Ivue Guide is forked and based on FTV Guide, Dixie , Ivue , tommy winthers original code, </disclaimer>
 	</extension>
 </addon>
