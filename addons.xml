@@ -90,7 +90,7 @@ provider-name="Team IVUE">
   </extension>
   <extension point="xbmc.addon.metadata">
     <summary lang="en">iVue Wizard</summary>
-    <description lang="en">iVue Wizard provides easy access to fixes and maintenance for iVue Tv Guide</description>
+    <description lang="en">iVue Wizard provides easy access to fixes and maintenance for iVue Tv Guide </description>
     <platform>all</platform>
   </extension>
 </addon>
