@@ -20,9 +20,9 @@
 </addon>
 
 <addon id="plugin.video.IVUEcreator"
-version="0.2.0"
-name="IVUEcreator"
-provider-name="Team IVUE">
+version="0.3.0"
+name="IVUE Creator"
+provider-name="TeamiVue">
 <requires>
   <import addon="xbmc.python" version="2.20.0"/>
   <import addon="script.module.xbmcswift2" version="2.4.0"/>
@@ -33,9 +33,8 @@ provider-name="Team IVUE">
   <provides>video</provides>
 </extension>
 <extension point="xbmc.addon.metadata">
-  <summary lang="en">IVUECreator</summary>
-  <description lang="en">Integrate any plugin installed to IVUE guide easily and quickly with PVR support.</description>
-  <description lang="en">Now includes a fully functioning back up and restore feature</description>
+  <summary lang="en">IVUE Creator</summary>
+  <description lang="en">Integrate any plugin installed to IVUE guide easily and quickly with PVR support #teamiVue Thank you to those that worked on this it was a pleasure working with you all.</description>
   <disclaimer lang="en">Modified by TeamJDM from the original code from "Primeaval" </disclaimer>
 </extension>
 </addon>
@@ -110,7 +109,7 @@ provider-name="Team IVUE">
   </extension>
 </addon>
 
-<addon id="script.ivueguide" name="Ivue TV Guide" version="3.0.3" provider-name="iVue Tv Guide">
+<addon id="script.ivueguide" name="Ivue TV Guide" version="3.0.4" provider-name="iVue Tv Guide">
 	<requires>
 		<import addon="xbmc.python" version="2.1.0"/>
 		<import addon="script.module.simplejson" version="2.0.10"/>
@@ -119,8 +118,8 @@ provider-name="Team IVUE">
     <extension point="xbmc.service" library="service.py" start="login"/>
 	<extension point="xbmc.addon.metadata">
 	<provides>video</provides>
-		<description lang="en">Ivue TV Guide simple free and effective, We hope you like it now with category intergration #teamiVue#</description>
-		<disclaimer lang="en">Ivue Guide is forked and based on FTV Guide, Dixie , Ivue , tommy winthers original code, </disclaimer>
+		<description lang="en">Final Release of Ivue Guide, simple free and effective, We hope you like it now with category intergration #teamiVue, Huge thanks to all coders out there for getting involved, Driving iVue to the top.</description>
+		<disclaimer lang="en">Final Release of Ivue Guide and is forked and based on FTV Guide, Dixie , Ivue , tommy winthers original code, </disclaimer>
 	</extension>
 </addon>
 
