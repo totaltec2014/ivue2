@@ -20,9 +20,9 @@
 </addon>
 
 <addon id="plugin.video.IVUEcreator"
-version="0.3.1"
-name="IVUE Creator"
-provider-name="TeamiVue">
+version="0.3.2"
+name="IVUEcreator"
+provider-name="Team IVUE">
 <requires>
   <import addon="xbmc.python" version="2.20.0"/>
   <import addon="script.module.xbmcswift2" version="2.4.0"/>
@@ -33,8 +33,9 @@ provider-name="TeamiVue">
   <provides>video</provides>
 </extension>
 <extension point="xbmc.addon.metadata">
-  <summary lang="en">IVUE Creator</summary>
-  <description lang="en">Integrate any plugin installed to IVUE guide easily and quickly with PVR support #teamiVue Thank you to those that worked on this it was a pleasure working with you all.</description>
+  <summary lang="en">IVUECreator</summary>
+  <description lang="en">Integrate any plugin installed to IVUE guide easily and quickly with PVR support.</description>
+  <description lang="en">Now includes a fully functioning back up and restore feature</description>
   <disclaimer lang="en">Modified by TeamJDM from the original code from "Primeaval" </disclaimer>
 </extension>
 </addon>
