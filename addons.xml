@@ -80,7 +80,7 @@ provider-name="Team IVUE">
 </addon>
 
 
-<addon id="plugin.video.iVuewiz" name="iVue Wizard" version="2.0.1" provider-name="iVue">
+<addon id="plugin.video.iVuewiz" name="iVue Wizard" version="2.0.2" provider-name="iVue">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
 	<import addon="script.module.addon.common" />
