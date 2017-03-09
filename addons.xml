@@ -80,7 +80,7 @@ provider-name="Team IVUE">
 </addon>
 
 
-<addon id="plugin.video.iVuewiz" name="iVue Wizard" version="2.0.0" provider-name="iVue">
+<addon id="plugin.video.iVuewiz" name="iVue Wizard" version="2.0.1" provider-name="iVue">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
 	<import addon="script.module.addon.common" />
@@ -90,7 +90,7 @@ provider-name="Team IVUE">
   </extension>
   <extension point="xbmc.addon.metadata">
     <summary lang="en">iVue Wizard</summary>
-    <description lang="en">iVue Wizard provides easy access to fixes and maintenance for iVue Tv Guide </description>
+    <description lang="en">iVue Wizard provides easy access to fixes and maintenance for iVue Tv Guide</description>
     <platform>all</platform>
   </extension>
 </addon>
