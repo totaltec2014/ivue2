@@ -1,8 +1,37 @@
-#This TV guide has been re skinned using the original developers code all credits must go to them ie FXB78,Bluezed tommy winther dixie Ray Wilson etc, 
+iVue TV Guide - v4.0.0
 
---------------------------
-Initial release 0.0.1
---------------------------
+New Features...
 
-1.0.0 Great help from Team JDM add.py cleaned and tidied keep an eye out for v 1.0.1 
-Default skin reworked
+- Linked Addon Indicator - iVue now shows which addon is linked to each channel slot making it easier to see which addon is linked to a particular channel.
+
+- OSD Info Bar - All iVue skins have been updated to include the new OSD Info Bar feature, the OSD will be displayed on selection/loading of a channel and shows whats on next along with programme info. Users can also scroll through the OSD info and play channels from the OSD too. (OSD can be accessed while a stream is playing by pressing info, up, down, or mouse scroll).
+
+- Program Search - Program search has been moved to the main "back button" menu for easy access. Reminders will also be shown and marked. Reminders can also be played or removed in the program search view.
+
+- My Planner - new feature added to the "back button" menu, allows easy access and listing of all reminders set within the guide. Reminders can also be played or or set in the planner view.
+
+- Live Sports - new feature added to the "back button" menu, allows for easy searching and viewing of different categories of sports listings. Reminders can also be played or set in the live sports view.
+
+- Reminder Prompt - The reminder prompt now offers the option to "Watch" taking you straight to the channel the reminder is set for.
+
+- Codec options have been added to the Tools menu within the "back button" menu to make it simpler for android users to adjust or turn on/off codecs.
+
+- Subscription provider integration now available in iVue settings for easy one click integration.
+
+Other tweaks and enhancements...
+
+- Reminders are now set for selected program and not all instances of that program.
+
+- iVue now focuses on selected channel so when returning to the guide from full screen the correct channel will be highlighted instead of the first channel on the page.
+
+- Categories have been updated to include the newer sports channel names.
+
+- Master addons ini has been stripped of old/dead links.
+
+- iVue now remembers channel reordering, changing xml will not reset channel organisation any more.
+
+- New clean up options now available in the TOOLS AND SETTINGS menu.
+
+- Menu shortcuts have been updated.
+
+- Many other tweaks and fixes to improve overall performance and stability including new play method to help with buffering.
