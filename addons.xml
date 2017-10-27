@@ -129,10 +129,12 @@ provider-name="Team IVUE">
   </extension>
 </addon>
 
-<addon id="script.ivueguide" name="Ivue TV Guide" version="4.0.0" provider-name="iVue Tv Guide">
+<addon id="script.ivueguide" name="Ivue TV Guide" version="4.0.1" provider-name="iVue Tv Guide">
 	<requires>
 		<import addon="xbmc.python" version="2.1.0"/>
 		<import addon="script.module.simplejson" version="2.0.10"/>
+      <import addon="script.module.requests" version="2.9.1" />
+      <import addon="script.module.beautifulsoup4" />
 	</requires>
 	<extension point="xbmc.python.script" library="addon.py"/>
     <extension point="xbmc.service" library="service.py" start="login"/>
@@ -142,7 +144,6 @@ provider-name="Team IVUE">
 		<disclaimer lang="en">Final Release of Ivue Guide and is forked and based on FTV Guide, Dixie , Ivue ,Primeval, tommy winthers original code, </disclaimer>
 	</extension>
 </addon>
-
 
 
 <addon id="plugin.video.ottalpha"
