@@ -39,7 +39,7 @@
 </addon>
 
 <addon id="plugin.video.IVUEcreator"
-version="0.3.5"
+version="0.3.6"
 name="IVUEcreator"
 provider-name="Team IVUE">
 <requires>
@@ -98,8 +98,20 @@ provider-name="Team IVUE">
 	</extension>
 </addon>
 
+<addon id="plugin.video.intervue" name="InterVUE" version="1.0.1" provider-name="[B]subTeam[/B]">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+  </requires>
+  <extension point="xbmc.python.script" library="main.py"> 
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en"></summary>
+    <description lang="en"></description>
+    <platform>all</platform>
+  </extension>
+</addon>
 
-<addon id="plugin.video.iVuewiz" name="iVue Wizard" version="2.0.2" provider-name="iVue">
+<addon id="plugin.video.iVuewiz" name="iVue Wizard" version="2.0.3" provider-name="iVue">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
 	<import addon="script.module.addon.common" />
@@ -129,7 +141,7 @@ provider-name="Team IVUE">
   </extension>
 </addon>
 
-<addon id="script.ivueguide" name="Ivue TV Guide" version="4.1.0" provider-name="iVue Tv Guide">
+<addon id="script.ivueguide" name="Ivue TV Guide" version="4.1.1" provider-name="iVue Tv Guide">
 	<requires>
 		<import addon="xbmc.python" version="2.1.0"/>
 		<import addon="script.module.simplejson" version="2.0.10"/>
