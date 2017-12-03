@@ -99,7 +99,7 @@ provider-name="Team IVUE">
 	</extension>
 </addon>
 
-<addon id="plugin.video.intervue" name="InterVUE" version="1.0.1" provider-name="[B]subTeam[/B]">
+<addon id="plugin.video.intervue" name="InterVUE" version="1.0.2" provider-name="[B]subTeam[/B]">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
   </requires>
