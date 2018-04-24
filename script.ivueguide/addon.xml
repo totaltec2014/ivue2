@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="script.ivueguide" name="Ivue TV Guide" version="4.1.4" provider-name="iVue Tv Guide">
-    <requires>
+<addon id="script.ivueguide" name="Ivue TV Guide" version="4.1.5" provider-name="iVue Tv Guide">
+	<requires>
 		<import addon="xbmc.python" version="2.1.0"/>
 		<import addon="script.module.simplejson" version="2.0.10"/>
-        <import addon="script.module.requests" version="2.9.1" />
-        <import addon="script.module.dateutil" version="2.4.2" />
-        <import addon="script.module.beautifulsoup4" />
-    </requires>
+	</requires>
 	<extension point="xbmc.python.script" library="addon.py"/>
     <extension point="xbmc.service" library="service.py" start="login"/>
 	<extension point="xbmc.addon.metadata">
