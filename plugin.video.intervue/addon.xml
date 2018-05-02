@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.intervue" name="InterVUE" version="1.0.3" provider-name="[B]subTeam[/B]">
+<addon id="plugin.video.intervue" name="InterVUE" version="1.0.4" provider-name="[B]subTeam[/B]">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
   </requires>
