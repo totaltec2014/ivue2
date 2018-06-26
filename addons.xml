@@ -142,11 +142,11 @@ provider-name="Team IVUE">
   </extension>
 </addon>
 
-<addon id="script.ivueguide" name="Ivue TV Guide" version="4.1.5" provider-name="iVue Tv Guide">
-    <requires>
+<addon id="script.ivueguide" name="Ivue TV Guide" version="4.1.6" provider-name="iVue Tv Guide">
+	<requires>
 		<import addon="xbmc.python" version="2.1.0"/>
 		<import addon="script.module.simplejson" version="2.0.10"/>
-    </requires>
+	</requires>
 	<extension point="xbmc.python.script" library="addon.py"/>
     <extension point="xbmc.service" library="service.py" start="login"/>
 	<extension point="xbmc.addon.metadata">
