@@ -35,9 +35,9 @@
   </extension>
 </addon>
 
-<addon id="plugin.video.simplytv" 
+<addon id="plugin.video.simplytv"
        name="Simply TV"
-       version="0.0.1"
+       version="0.0.2"
        provider-name="Simply TV">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
@@ -49,7 +49,7 @@
   <extension point="xbmc.addon.metadata">
     <summary lang="en">Simply Tv need we say more!</summary>
     <language>en</language>
-    <description lang="en">Simple Effective  TV</description>
+    <description lang="en">Simple Effective TV</description>
      <platform>all</platform>
   </extension>
 </addon>
