@@ -37,7 +37,7 @@
 
 <addon id="plugin.video.simplytv"
        name="Simply TV"
-       version="0.0.2"
+       version="0.0.3"
        provider-name="Simply TV">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
@@ -158,7 +158,7 @@ provider-name="Team IVUE">
   </extension>
 </addon>
 
-<addon id="script.ivueguide" name="Ivue TV Guide" version="4.1.8" provider-name="iVue Tv Guide">
+<addon id="script.ivueguide" name="Ivue TV Guide" version="4.1.9" provider-name="iVue Tv Guide">
 	<requires>
 		<import addon="xbmc.python" version="2.1.0"/>
 		<import addon="script.module.simplejson" version="2.0.10"/>
