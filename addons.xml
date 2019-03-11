@@ -1,6 +1,6 @@
 ﻿<addons>
 
-<addon id="plugin.video.flashiptv" version="0.0.4" name="Flash IPTV" provider-name="Team Flash">
+<addon id="plugin.video.flashiptv" version="0.0.5" name="Flash IPTV" provider-name="Team Flash">
     <requires>
         <import addon="xbmc.python" version="2.1.0"/>        
     </requires>
