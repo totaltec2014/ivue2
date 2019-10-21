@@ -35,23 +35,20 @@
   </extension>
 </addon>
 
-<addon id="plugin.video.simplytv"
-       name="Simply TV"
-       version="0.0.3"
-       provider-name="Simply TV">
-  <requires>
-    <import addon="xbmc.python" version="2.1.0"/>
-  </requires>
-  <extension point="xbmc.python.pluginsource"
-            library="default.py">
+<addon id="plugin.video.simplytv" version="3.0.5" name="Simply" provider-name="Team simply">
+    <requires>
+        <import addon="xbmc.python" version="2.1.0"/>        
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
         <provides>video</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en">Simply Tv need we say more!</summary>
-    <language>en</language>
-    <description lang="en">Simple Effective TV</description>
-     <platform>all</platform>
-  </extension>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary>simply</summary>
+        <description>simply tv and catchup</description>
+        <disclaimer>The author does not host or distribute any of the content displayed by this addon. The author does not have any affiliation with the content providers.</disclaimer>
+        <language>en</language>
+        <platform>all</platform>
+    </extension>
 </addon>
 
 
