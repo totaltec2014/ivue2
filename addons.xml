@@ -1,9 +1,7 @@
 ﻿<addons>
 
-<addon id="plugin.video.flashiptv" version="0.0.5" name="Flash IPTV" provider-name="Team Flash">
-    <requires>
-        <import addon="xbmc.python" version="2.1.0"/>        
-    </requires>
+<addon id="plugin.video.flashiptv" version="1.0.0" name="Flash IPTV" provider-name="Team Flash">
+
     <extension point="xbmc.python.pluginsource" library="default.py">
         <provides>video</provides>
     </extension>
@@ -13,6 +11,10 @@
         <disclaimer>The author does not host or distribute any of the content displayed by this addon. The author does not have any affiliation with the content providers.</disclaimer>
         <language>en</language>
         <platform>all</platform>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
     </extension>
 </addon>
 
@@ -35,19 +37,23 @@
   </extension>
 </addon>
 
-<addon id="plugin.video.simplytv" version="3.0.8" name="Simply" provider-name="Team simply">
+<addon id="plugin.video.simplytv" version="3.0.9" name="Simply" provider-name="Team simply">
     <requires>
-        <import addon="xbmc.python" version="2.1.0"/>        
+        <import addon="xbmc.python" version="3.0.0"/>        
     </requires>
     <extension point="xbmc.python.pluginsource" library="default.py">
         <provides>video</provides>
     </extension>
     <extension point="xbmc.addon.metadata">
         <summary>simply</summary>
-        <description>simply tv and catchup</description>
+        <description>simply tv catchup</description>
         <disclaimer>The author does not host or distribute any of the content displayed by this addon. The author does not have any affiliation with the content providers.</disclaimer>
         <language>en</language>
         <platform>all</platform>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
     </extension>
 </addon>
 
@@ -155,10 +161,11 @@ provider-name="Team IVUE">
   </extension>
 </addon>
 
-<addon id="script.ivueguide" name="Ivue TV Guide" version="4.2.9" provider-name="iVue Tv Guide">
+<addon id="script.ivueguide" name="Ivue TV Guide" version="4.3.0" provider-name="iVue Tv Guide">
 	<requires>
-		<import addon="xbmc.python" version="2.1.0"/>
 		<import addon="script.module.simplejson" version="2.0.10"/>
+		<import addon="script.module.beautifulsoup4" />
+		<import addon="script.module.requests" />
 	</requires>
 	<extension point="xbmc.python.script" library="addon.py"/>
     <extension point="xbmc.service" library="service.py" start="login"/>
@@ -166,6 +173,13 @@ provider-name="Team IVUE">
 	<provides>video</provides>
 		<description lang="en">Final Final Final ISH Release of Ivue Guide, simple free and effective, We hope you like it now with category intergration #teamiVue, Huge thanks to all coders out there for getting involved.</description>
 		<disclaimer lang="en">Final Release of Ivue Guide and is forked and based on FTV Guide, Dixie , Ivue ,Primeval, tommy winthers original code, </disclaimer>
+		<assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+            <screenshot>resources/images/screenshot-01.jpg</screenshot>
+            <screenshot>resources/images/screenshot-02.jpg</screenshot>
+            <screenshot>resources/images/screenshot-03.jpg</screenshot>
+        </assets>
 	</extension>
 </addon>
 

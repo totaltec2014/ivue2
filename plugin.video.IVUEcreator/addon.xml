@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addon id="plugin.video.IVUEcreator"
-version="0.3.7"
+version="1.0.0"
 name="IVUEcreator"
 provider-name="Team IVUE">
 <requires>
-  <import addon="xbmc.python" version="2.20.0"/>
   <import addon="script.module.xbmcswift2" version="2.4.0"/>
   <import addon="script.module.requests" version="2.9.1" />
 </requires>
@@ -16,6 +15,10 @@ provider-name="Team IVUE">
   <description lang="en">Integrate any plugin installed to IVUE guide easily and quickly</description>
   <description lang="en">Now includes a fully functioning back up and restore feature</description>
   <disclaimer lang="en">Modified by TeamJDM from the original code from "Primeaval" </disclaimer>
+  <assets>
+      <icon>icon.png</icon>
+      <fanart>fanart.jpg</fanart>
+  </assets>
 </extension>
 </addon>
 
