@@ -1,4 +1,5 @@
-﻿<addons>
+<?xml version="1.0" encoding="UTF-8"?>
+<addons>
 
 <addon id="plugin.video.flashiptv" version="1.0.0" name="Flash IPTV" provider-name="Team Flash">
 
@@ -18,29 +19,8 @@
     </extension>
 </addon>
 
-<addon id="script.module.beautifulsoup4"
-       name="BeautifulSoup4"
-       version="4.3.2"
-       provider-name="Leonard Richardson (leonardr@segfault.org)">
-  <requires>
-    <import addon="xbmc.python" 
-    		version="2.1.0"/>
-  </requires>
-  <extension point="xbmc.python.module"
-             library="lib" />
-  <extension point="xbmc.addon.metadata">
-    <summary>HTML/XML parser for quick-turnaround applications like screen-scraping</summary>
-    <description>Beautiful Soup parses arbitrarily invalid SGML and provides a variety of methods and Pythonic idioms for iterating and searching the parse tree.</description>
-    <license>BSD</license>
-    <platform>all</platform>
-    <website>http://www.crummy.com/software/BeautifulSoup/</website>
-  </extension>
-</addon>
+<addon id="plugin.video.simplytv" version="3.1.0" name="Simply" provider-name="Team simply">
 
-<addon id="plugin.video.simplytv" version="3.0.9" name="Simply" provider-name="Team simply">
-    <requires>
-        <import addon="xbmc.python" version="3.0.0"/>        
-    </requires>
     <extension point="xbmc.python.pluginsource" library="default.py">
         <provides>video</provides>
     </extension>
@@ -63,8 +43,8 @@ version="1.0.0"
 name="IVUEcreator"
 provider-name="Team IVUE">
 <requires>
-  <import addon="script.module.xbmcswift2" version="2.4.0"/>
-  <import addon="script.module.requests" version="2.9.1" />
+  <import addon="script.module.xbmcswift2"/>
+  <import addon="script.module.requests"/>
 </requires>
 <extension point="xbmc.python.pluginsource" library="main.py">
   <provides>video</provides>
@@ -81,93 +61,11 @@ provider-name="Team IVUE">
 </extension>
 </addon>
 
-
-<addon id="script.extendedinfo" name="ExtendedInfo Script Mod" version="4.7.6" provider-name="Original work by phil65, modded by [COLOR FF8ABEE2]Open[/COLOR][COLOR FF757677]ELEQ[/COLOR]">
+<addon id="script.ivueguide" name="Ivue TV Guide" version="4.3.1" provider-name="iVue Tv Guide">
 	<requires>
-		<import addon="xbmc.python" version="2.1.0"/>
-		<import addon="script.module.pil" version="1.1.7"/>
-		<import addon="script.module.requests" version="1.1.0"/>
-		<import addon="script.module.simplejson" version="2.0.10"/>
-		<import addon="script.module.urlresolver" version="1.0.0"/>
-		<import addon="script.module.youtube.dl" version="14.519.1"/>
-		<import addon="plugin.program.super.favourites" version="1.0.43"/>
-	</requires>
-	<extension point="xbmc.python.script"           library="default.py">
-		<provides>executable</provides>
-	</extension>
-	<extension point="xbmc.python.library"          library="default.py" />
-	<extension point="xbmc.python.pluginsource"     library="plugin.py">
-		<provides>video</provides>
-	</extension>
-	<extension point="kodi.context.item"            library="addon.py">
-		<provides>executable</provides>	
-			<item>
-				<label>Alternate Play</label>
-				<visible>StringCompare(ListItem.FileExtension,strm) + [StringCompare(ListItem.dbtype,movie) | StringCompare(ListItem.dbtype,episode)]</visible>
-			</item>
-	</extension>
-	<extension point="xbmc.addon.metadata">
-		<language/>
-		<summary lang="en">ExtendedInfo Script Mod</summary>
-		<description lang="en">This script offers various possibilities to display online content inside skins as well as a complete MovieDB browser including info dialogs for various media types. Used services are themoviedb.org, theaudiodb.org, rottentomatoes.com, Trakt.TV, omdbapi.com and a lot more. Needs skin implementation for lot of functions.</description>
-		<summary lang="nl">ExtendedInfo Script Mod</summary>
-		<description lang="nl">Dit script biedt meerdere mogelijkheded om online content weer te geven in skins en bevat ook een complete MovieDB browser inclusief info dialogen voor verscheidene media types. Gebruikte diensten zijn themoviedb.org, theaudiodb.org, rottentomatoes.com, Trakt.TV, omdbapi.com en nog veel meer. Vereist skin implementatie voor de meeste functies.</description>
-		<platform>all</platform>
-		<license>GNU GENERAL PUBLIC LICENSE Version 2, June 1991</license>
-		<forum>http://www.noobsandnerds.com/forums/index.php?topic=7393.0</forum>
-		<source>https://github.com/OpenELEQ/repository.q/tree/master/zips/script.extendedinfo</source>
-		<email>OpenELEQ@gmail.com</email>
-	</extension>
-</addon>
-
-<addon id="plugin.video.intervue" name="InterVUE" version="1.0.5" provider-name="[B]subTeam[/B]">
-  <requires>
-    <import addon="xbmc.python" version="2.1.0"/>
-  </requires>
-  <extension point="xbmc.python.script" library="main.py"> 
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en"></summary>
-    <description lang="en"></description>
-    <platform>all</platform>
-  </extension>
-</addon>
-
-<addon id="plugin.video.iVuewiz" name="iVue Wizard" version="2.0.5" provider-name="iVue">
-  <requires>
-    <import addon="xbmc.python" version="2.1.0"/>
-	<import addon="script.module.addon.common" />
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
-        <provides>video executable</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en">iVue Wizard</summary>
-    <description lang="en">iVue Wizard provides easy access to fixes and maintenance for iVue Tv Guide.</description>
-    <platform>all</platform>
-  </extension>
-</addon>
-
-
-<addon id="script.iVueSkins" name="iVue2 Skins" version="1.0.3" provider-name="retrorat1"> 
-  <requires>
-    <import addon="xbmc.python" version="2.1.0"/>
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
-        <provides>executable</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en">iVue2 Skins</summary>
-    <description lang="en">This is the place to find all Ivue2 TV Guide Skins Thanks to all authors of the code</description>
-    <platform>all</platform>
-  </extension>
-</addon>
-
-<addon id="script.ivueguide" name="Ivue TV Guide" version="4.3.0" provider-name="iVue Tv Guide">
-	<requires>
-		<import addon="script.module.simplejson" version="2.0.10"/>
-		<import addon="script.module.beautifulsoup4" />
-		<import addon="script.module.requests" />
+		<import addon="script.module.simplejson"/>
+		<import addon="script.module.beautifulsoup4"/>
+		<import addon="script.module.requests"/>
 	</requires>
 	<extension point="xbmc.python.script" library="addon.py"/>
     <extension point="xbmc.service" library="service.py" start="login"/>
@@ -199,67 +97,4 @@ provider-name="Team IVUE">
 	</extension>
 </addon>
 
-<addon id="script.module.xbmcswift2" name="xbmcswift2" provider-name="Jonathan Beluch (jbel)" version="2.4.0">
-  <requires>
-    <import addon="xbmc.python" version="2.1.0" />
-  </requires>
-  <extension library="lib" point="xbmc.python.module" />
-  <extension point="xbmc.addon.metadata">
-    <language />
-    <platform>all</platform>
-  </extension>
-</addon>
-
-<addon id="script.matchcenter" name="Match center" version="2.1.2" provider-name="enen92">
-	<requires>
-		<import addon="xbmc.python" version="2.24.0"/>
-		<import addon="script.module.thesportsdb" version="1.0.1"/>
-		<import addon="script.module.pytz" version="2014.2"/>
-		<import addon="script.module.twitter" version="1.17.1"/>
-		<import addon="script.keymap" version="1.0.10"/>
-	</requires>
-	<extension point="xbmc.python.script" library="main.py" />
-	<extension point="xbmc.addon.metadata">
-		<platform>all</platform>
-		<website>http://www.thesportsdb.com/</website>
-		<source>https://github.com/enen92/script.matchcenter</source>
-		<forum>http://forum.kodi.tv/showthread.php?tid=259894</forum>
-		<summary lang="en">Extended football match information</summary>
-		<summary lang="pt">Informação extra para encontros de futebol</summary>
-		<description lang="en">This addon brings a window that can be mapped to a remote key to show livescores for the current live football games, access match information (goals, cards, subs, lineups) or follow what others are saying about the match in twitter.[CR][CR]Powered by: http://www.thesportsdb.com</description>
-		<description lang="pt">Este addon apresenta uma janela (que pode ser mapeada a um botão do comando) para apresentar os resultados ao vivo dos jogos de futebol, aceder a informação relaccionada com o jogo em questão (golos, cartões, substituições, equipa titular) ou aquilo que os outros estão a dizer acerca do jogo no twitter. [CR][CR]Suportado por: http://www.thesportsdb.com</description>
-    </extension>
-</addon>
-
-<addon id="script.module.thesportsdb" name="The Sports DB" version="1.0.1" provider-name="enen92,Zag">
-  <requires>
-    <import addon="xbmc.python" version="2.20.0" />
-  </requires>
-  <extension point="xbmc.python.module" library="lib" />
-  <extension point="xbmc.addon.metadata">
-    <platform>all</platform>
-    <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
-    <website>http://www.thecocktaildb.com/</website>
-	<source>https://github.com/enen92/script.module.thesportsdb</source>
-	<forum>http://forum.kodi.tv/showthread.php?tid=258129</forum>
-    <summary lang="en">Python module for thesportsdb.com</summary>
-    <description lang="en">A collection of python methods to wrap the thesportsdb.com API calls</description>
-  </extension>
-</addon>
-
-<addon id="script.module.twitter" name="Twitter" version="1.17.1" provider-name="Mike Verdone">
-  <requires>
-    <import addon="xbmc.python" version="2.24.0" />
-  </requires>
-  <extension point="xbmc.python.module" library="lib" />
-  <extension point="xbmc.addon.metadata">
-    <platform>all</platform>
-    <summary lang="en">An API and command-line toolset for Twitter (twitter.com)</summary>
-    <description lang="en">An API and command-line toolset for Twitter (twitter.com)</description>
-    <source>https://pypi.python.org/pypi/twitter/1.17.1</source>
-    <website>http://mike.verdone.ca/twitter/</website>
-    <platform>all</platform>
-    <licence>MIT License</licence>
-  </extension>
-</addon>
 </addons>
