@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addons>
 
-<addon id="plugin.video.flashiptv" version="1.0.1" name="Flash IPTV" provider-name="Team Flash">
+<addon id="plugin.video.flashiptv" version="1.0.2" name="Flash IPTV" provider-name="Team Flash">
 
     <extension point="xbmc.python.pluginsource" library="default.py">
         <provides>video</provides>
